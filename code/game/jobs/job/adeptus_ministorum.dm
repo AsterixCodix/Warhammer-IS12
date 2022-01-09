@@ -1,9 +1,9 @@
 //Due to how large this one is it gets its own file. Sister of Battle and all her stuff including items, excluding weapons those are in mattguns.dm, is also located here.
 
-//Confessor
+//Deacon
 
 /datum/job/chaplain
-	title = "Ministorum Confessor"
+	title = "Deacon"
 	department = "Ministorum"
 	department_flag = CIV|COM
 	total_positions = 1
@@ -24,22 +24,22 @@
 	shotgun_skill = 2
 	lmg_skill = 2
 	smg_skill = 2
-	melee_skill = 4
-	ranged_skill = 2
-	medical_skill = 5
-	engineering_skill = 0
-	surgery_skill = 3
+	melee_skill = 6
+	ranged_skill = 6
+	medical_skill = 6
+	engineering_skill = 3
+	surgery_skill = 4
 
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Confessor [current_name]")
-		H.add_stats(rand(10,13), rand(10,13), rand(10,12), rand(12,16)) //frail and holy
+		H.fully_replace_character_name("Deacon [current_name]")
+		H.add_stats(rand(11,15), rand(10,14), rand(10,14), rand(12,16)) //frail and holy
 		H.get_idcard()?.access = list(access_heads, access_security, access_sec_doors, access_brig, access_forensics_lockers, access_all_personal_lockers, access_maint_tunnels, access_sob,)
 		H.warfare_language_shit(LANGUAGE_HIGH_GOTHIC)
 		H.warfare_faction = IMPERIUM
-		to_chat(H, "<span class='notice'><b><font size=3>You are a Confessor-Millitant attached to the Rogue Trader through the Missionarus Galaxia. You are one of the Ecclesiarchy's fearsome zealot preachers, your oratory skills can stir entire crowds and cause them to turn on one another, exposing eachother's darkest secrets. You often work on worlds where faith is lacking, and people are rebellious. It is your job to preach to the flock and indoctrinate new individuals into it, protect the chapel, and ensure the relics in your reliquary remain safe and untouched by the unworthly.</font></b></span>")
+		to_chat(H, "<span class='notice'><b><font size=3>You are the Ecclesiarch Deacon. You are one of the Imperial Cult's priesthood, your oratory skills can stir entire crowds of the faithful and turn a coward into a zealot. You often work on worlds where faith is lacking, and people are rebellious. It is your job to spread the Imperial Cult to this new colony and it's ignorant masses, bringing their backwards beliefs in line with the faith of the God Emperor, as well as guiding the already faithful.</font></b></span>")
 
 	equip(var/mob/living/carbon/human/H, var/alt_title, var/ask_questions = TRUE)
 		. = ..()
@@ -175,7 +175,7 @@
 		O.armor_penetration += 1
 		O.isblessed = 1
 		playsound(src, 'sound/voice/blessing.ogg', 70, 0, 1)
-		visible_message("[O] is bathed in righteous incense as the Confessor chants a short litany, you can sense a change in the weapon just by touching it.")
+		visible_message("[O] is bathed in righteous incense as the Deacon chants a short litany, you can sense a change in the weapon just by touching it.")
 
 //this blesses swords
 /obj/item/melee/whip/censer/attackby(var/obj/item/material/sword/O, var/mob/user)
@@ -188,7 +188,7 @@
 		O.block_chance += 5
 		O.isblessed = 1
 		playsound(src, 'sound/voice/blessing.ogg', 70, 0, 1)
-		visible_message("[O] is bathed in righteous incense as the Confessor chants a short litany, you can sense a change in the weapon just by touching it.")
+		visible_message("[O] is bathed in righteous incense as the Deacon chants a short litany, you can sense a change in the weapon just by touching it.")
 
 
 
@@ -200,32 +200,32 @@
 	title = "Battle Sister"
 	department = "Ministorum"
 	department_flag = CIV
-	total_positions = 0
-	spawn_positions = 0
+	total_positions = 1
+	spawn_positions = 1
 	open_when_dead = 0
 	social_class = SOCIAL_CLASS_HIGH
 	latejoin_at_spawnpoints = TRUE
-	supervisors = "the Adepta Sororitas and the Ministorum Confessor"
+	supervisors = "the Adepta Sororitas and Ministorum"
 	selection_color = "#FCFBFA"
 	announced = FALSE
 	outfit_type = /decl/hierarchy/outfit/job/sisterofbattle
-	auto_rifle_skill = 9
-	semi_rifle_skill = 9
-	sniper_skill = 9
-	shotgun_skill = 9
-	lmg_skill = 9
-	smg_skill = 9
-	melee_skill = 7
+	auto_rifle_skill = 6
+	semi_rifle_skill = 6
+	sniper_skill = 6
+	shotgun_skill = 6
+	lmg_skill = 6
+	smg_skill = 6
+	melee_skill = 12
 	ranged_skill = 9
-	medical_skill = 4
-	engineering_skill = 0
-	surgery_skill = 1
+	medical_skill = 6
+	engineering_skill = 3
+	surgery_skill = 2
 	req_admin_notify = 1
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Sister Elohiem [current_name]")
+		H.fully_replace_character_name("Sister [current_name]")
 		H.set_trait(new/datum/trait/death_tolerant)
 		H.set_quirk(new/datum/quirk/dead_inside) // the only thing the sisters of the orders millitant feel is the god emperor's light.
 		H.add_stats(rand(18,22), rand(18,22), rand(18,22), rand(18,22))
@@ -235,7 +235,7 @@
 		H.gender = FEMALE
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC)
 		H.f_style = "shaved"
-		to_chat(H, "<span class='notice'><b><font size=3>You are a Sister of Battle belonging to the Order of the Sacred Rose, marked as Elohiem. Half warrior, half preacher, you have willingly spilt blood in the Emperor's name and are one of His most devout and evangelical Sisters. You have been tasked with defending holy Ecclesiarchal relics and the Ecclesiarchy attached to them. Your main goal is to defend the chapel, the three holy relics inside, and the priest, EVERYTHING ELSE IS SECONDARY. Roleplay is required and will be scrutinized by everyone, including staff.</font></b></span>")
+		to_chat(H, "<span class='notice'><b><font size=3>You are a Sister of Battle belonging to the Order of the Sacred Rose, loyal only to the Ministorum and at times... the Inquisition..</font></b></span>")
 
 
 //outfit
@@ -243,6 +243,7 @@
 /decl/hierarchy/outfit/job/sisterofbattle
 	name = OUTFIT_JOB_NAME("Sister of Battle")
 	head = /obj/item/clothing/head/helmet/sisterofbattle
+	mask = /obj/item/clothing/mask/gas/explorer
 	l_ear = /obj/item/device/radio/headset/red_team
 	neck = /obj/item/reagent_containers/food/drinks/canteen
 	suit = /obj/item/clothing/suit/sisterofbattle
@@ -256,10 +257,7 @@
 	r_hand = /obj/item/gun/projectile/bolter_pistol/sisterofbattle
 	backpack_contents = list(
 	/obj/item/reagent_containers/food/snacks/warfare = 1,
-	/obj/item/ammo_magazine/bolt_rifle_magazine/sister = 3,
-	/obj/item/ammo_magazine/bolt_pistol_magazine = 3,
-	/obj/item/stack/thrones/ten = 1,
-	/obj/item/stack/thrones2/ten = 1,
+	/obj/item/ammo_magazine/bolt_rifle_magazine/sister = 4,
 	/obj/item/stack/thrones3/ten = 2,
 	)
 
@@ -292,24 +290,24 @@
 	minimal_player_age = 14
 	ideal_character_age = 50
 	outfit_type = /decl/hierarchy/outfit/job/medical/cmo
-	auto_rifle_skill = 5
-	semi_rifle_skill = 5
-	sniper_skill = 5
-	shotgun_skill = 5
-	lmg_skill = 5
-	smg_skill = 5
-	melee_skill = 6
-	ranged_skill = 5
-	medical_skill = 10
-	engineering_skill = 1
-	surgery_skill = 10
+	auto_rifle_skill = 3
+	semi_rifle_skill = 3
+	sniper_skill = 3
+	shotgun_skill = 3
+	lmg_skill = 3
+	smg_skill = 3
+	melee_skill = 9
+	ranged_skill = 8
+	medical_skill = 12
+	engineering_skill = 3
+	surgery_skill = 12
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Sister Hospitaller [current_name]")
+		H.fully_replace_character_name("Sister [current_name]")
 		H.set_trait(new/datum/trait/death_tolerant())
-		H.add_stats(rand(11,15), rand(11,15), rand(11,15), rand(12,16))
+		H.add_stats(rand(13,17), rand(13,17), rand(13,17), rand(12,17))
 		H.get_idcard()?.access = get_all_accesses()
 		H.get_equipped_item(slot_s_store)
 		H.warfare_faction = IMPERIUM
@@ -339,16 +337,16 @@
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics, access_maint_tunnels, access_sob)
 	minimal_access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_virology, access_maint_tunnels, access_sob)
 	outfit_type = /decl/hierarchy/outfit/job/medical/doctor
-	auto_rifle_skill = 4
-	semi_rifle_skill = 4
-	sniper_skill = 4
-	shotgun_skill = 4
-	lmg_skill = 4
-	smg_skill = 4
-	melee_skill = 5
-	ranged_skill = 4
+	auto_rifle_skill = 3
+	semi_rifle_skill = 3
+	sniper_skill = 3
+	shotgun_skill = 3
+	lmg_skill = 3
+	smg_skill = 3
+	melee_skill = 7
+	ranged_skill = 6
 	medical_skill = 8
-	engineering_skill = 0
+	engineering_skill = 1
 	surgery_skill = 8
 
 	equip(var/mob/living/carbon/human/H)
@@ -364,11 +362,6 @@
 		H.warfare_faction = IMPERIUM
 		H.f_style = "shaved"
 		H.h_style = "Bob"
-		H.verbs += list(
-		/mob/living/carbon/human/proc/khorne,
-		/mob/living/carbon/human/proc/nurgle,
-		/mob/living/carbon/human/proc/slaanesh,
-		/mob/living/carbon/human/proc/tzeentch)
 
 		to_chat(H, "<span class='notice'><b><font size=3>You are a junior sister of the Ordos Hospitaller, serving under the Sister Hospitaller to maintain the health and divinity of the garrison.</font></b></span>")
 
@@ -390,26 +383,21 @@
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_genetics,access_maint_tunnels)
 	minimal_access = list(access_medical, access_medical_equip, access_chemistry,access_maint_tunnels,)
 	outfit_type = /decl/hierarchy/outfit/job/medical/chemist
-	auto_rifle_skill = 4
-	semi_rifle_skill = 4
-	sniper_skill = 4
-	shotgun_skill = 4
-	lmg_skill = 4
-	smg_skill = 4
-	melee_skill = 4
-	ranged_skill = 4
-	medical_skill = 8
-	engineering_skill = 1
-	surgery_skill = 7
+	auto_rifle_skill = 3
+	semi_rifle_skill = 3
+	sniper_skill = 3
+	shotgun_skill = 3
+	lmg_skill = 3
+	smg_skill = 3
+	melee_skill = 8
+	ranged_skill = 7
+	medical_skill = 10
+	engineering_skill = 2
+	surgery_skill = 10
 
 	equip(var/mob/living/carbon/human/H)
 		..()
-		H.add_stats(rand(9,13), rand(9,13), rand(9,13), rand(10,13))
+		H.add_stats(rand(10,16), rand(10,16), rand(10,13), rand(10,16))
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC )
 		H.warfare_faction = IMPERIUM
-		H.verbs += list(
-		/mob/living/carbon/human/proc/khorne,
-		/mob/living/carbon/human/proc/nurgle,
-		/mob/living/carbon/human/proc/slaanesh,
-		/mob/living/carbon/human/proc/tzeentch)
 		to_chat(H, "<span class='notice'><b><font size=3>You mix and concoct the numerous decoctions, medicines and salves so beloved by the Ordos Hospitaller.</font></b></span>")

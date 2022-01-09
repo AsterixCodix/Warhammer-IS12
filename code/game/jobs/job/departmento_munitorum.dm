@@ -17,31 +17,26 @@
 	ideal_character_age = 40
 	outfit_type = /decl/hierarchy/outfit/job/cargo/qm
 	latejoin_at_spawnpoints = 1
-	auto_rifle_skill = 4
-	semi_rifle_skill = 4
-	sniper_skill = 4
-	shotgun_skill = 4
-	lmg_skill = 4
-	smg_skill = 4
-	melee_skill = 3
-	ranged_skill = 4
-	medical_skill = 3
-	engineering_skill = 4
-	surgery_skill = 0
+	auto_rifle_skill = 3
+	semi_rifle_skill = 3
+	sniper_skill = 3
+	shotgun_skill = 3
+	lmg_skill = 3
+	smg_skill = 3
+	melee_skill = 7
+	ranged_skill = 9
+	medical_skill = 4
+	engineering_skill = 5
+	surgery_skill = 2
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
 		H.fully_replace_character_name("[current_name]")
-		H.add_stats(rand(10,15), rand(10,13), rand(10,13), rand(8,13))
+		H.add_stats(rand(12,15), rand(12,15), rand(12,15), rand(12,16))
 		H.assign_random_quirk()
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC)
 		H.warfare_faction = IMPERIUM
-		H.verbs += list(
-		/mob/living/carbon/human/proc/khorne,
-		/mob/living/carbon/human/proc/nurgle,
-		/mob/living/carbon/human/proc/slaanesh,
-		/mob/living/carbon/human/proc/tzeentch)
 		to_chat(H, "<span class='notice'><b><font size=3>The others may not know it, but you're the most powerful man on the planet. You control what comes and goes as well as which palms are greased and which are left wanting.</font></b></span>")
 
 // Munitorum Menial
@@ -66,11 +61,11 @@
 	shotgun_skill = 3
 	lmg_skill = 3
 	smg_skill = 3
-	melee_skill = 2
-	ranged_skill = 3
-	medical_skill = 2
+	melee_skill = 6
+	ranged_skill = 8
+	medical_skill = 3
 	engineering_skill = 3
-	surgery_skill = 0
+	surgery_skill = 2
 
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
@@ -80,11 +75,6 @@
 		H.assign_random_quirk()
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC)
 		H.warfare_faction = IMPERIUM
-		H.verbs += list(
-		/mob/living/carbon/human/proc/khorne,
-		/mob/living/carbon/human/proc/nurgle,
-		/mob/living/carbon/human/proc/slaanesh,
-		/mob/living/carbon/human/proc/tzeentch)
 		to_chat(H, "<span class='notice'><b><font size=3>Keep things moving! Make sure imports and exports get where they need to go! If you're lost, speak to the Munitorum Priest!</font></b></span>")
 
 // Munitorum Explorator
@@ -118,3 +108,14 @@
 	minimal_access = list(access_library)
 	alt_titles = list("Journalist")
 	outfit_type = /decl/hierarchy/outfit/job/librarian
+	auto_rifle_skill = 3
+	semi_rifle_skill = 3
+	sniper_skill = 3
+	shotgun_skill = 3
+	lmg_skill = 3
+	smg_skill = 3
+	melee_skill = 6
+	ranged_skill = 7
+	medical_skill = 3
+	engineering_skill = 3
+	surgery_skill = 2

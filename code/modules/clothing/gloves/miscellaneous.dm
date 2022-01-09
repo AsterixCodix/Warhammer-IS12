@@ -150,7 +150,7 @@
 	w_class = ITEM_SIZE_NORMAL
 	siemens_coefficient = 0.7
 	permeability_coefficient = 0.03
-	armor = list(melee = 40, bullet = 40, laser = 40, energy = 25, bomb = 30, bio = 0, rad = 0)
+	armor = list(melee = 5, bullet = 5, laser = 5, energy = 25, bomb = 30, bio = 0, rad = 0)
 
 /obj/item/clothing/gloves/thick/swat/combat/krieg
 	icon_state = "krieggloves"
@@ -196,7 +196,6 @@
 	icon_state = "sister"
 	item_state = "sister"
 	armor = list(melee = 50, bullet = 50, laser = 50, energy = 40, bomb = 40, bio = 0, rad = 0)
-	canremove = 0
 	species_restricted = list(SPECIES_HUMAN)
 	cold_protection = HANDS
 	min_cold_protection_temperature = GLOVES_MIN_COLD_PROTECTION_TEMPERATURE

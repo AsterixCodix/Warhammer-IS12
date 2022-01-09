@@ -8,13 +8,17 @@
 	social_class = SOCIAL_CLASS_MED
 	selection_color = "#848484"
 	outfit_type = /decl/hierarchy/outfit/job/ig/enforcer
-	auto_rifle_skill = 6
-	semi_rifle_skill = 6
-	sniper_skill = 3
-	shotgun_skill = 8
-	lmg_skill = 10
-	smg_skill = 3
-	melee_skill = 9
+	auto_rifle_skill = 4
+	semi_rifle_skill = 4
+	sniper_skill = 4
+	shotgun_skill = 4
+	lmg_skill = 4
+	smg_skill = 4
+	melee_skill = 11
+	ranged_skill = 8
+	medical_skill = 2
+	engineering_skill = 2
+	surgery_skill = 1
 	can_be_in_squad = FALSE
 	open_when_dead = TRUE
 	department_flag = SEC
@@ -30,19 +34,13 @@
 	equip(var/mob/living/carbon/human/H)
 		var/current_name = H.real_name
 		..()
-		H.fully_replace_character_name("Enforcer [current_name]")
-		H.add_stats(rand(14,18), rand(10,14), rand(12,13), rand(10,13)) //meant to be a brute keeping the plebs in line
-		H.add_skills(rand(6,10),rand(6,10))
+		H.fully_replace_character_name("[current_name]")
+		H.add_stats(rand(14,18), rand(12,16), rand(12,16), rand(10,13)) //meant to be a brute keeping the plebs in line
 		H.assign_random_quirk()
 		H.witchblood()
 		H.warfare_language_shit(LANGUAGE_LOW_GOTHIC )
 		H.warfare_faction = IMPERIUM
 		H.get_idcard()?.access = list(access_security, access_sec_doors, access_brig, access_forensics_lockers, access_all_personal_lockers, access_maint_tunnels,)
-		H.verbs += list(
-		/mob/living/carbon/human/proc/khorne,
-		/mob/living/carbon/human/proc/nurgle,
-		/mob/living/carbon/human/proc/slaanesh,
-		/mob/living/carbon/human/proc/tzeentch)
 
 		to_chat(H, "<span class='notice'><b><font size=3>You are a proud officer of the Magistratum, your duty is to uphold Imperial law on this planet amongst the civilians. You are not to meddle in Guard duties lest absolutely necessary, focus your effort on maintaining the peace/order in the shanty town north of the outpost.</font></b></span>")
 

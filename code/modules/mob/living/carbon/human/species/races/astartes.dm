@@ -30,8 +30,6 @@ Astartes
 	species_flags = SPECIES_FLAG_NO_PAIN|SPECIES_FLAG_NO_POISON|SPECIES_FLAG_NO_EMBED|SPECIES_FLAG_NO_SCAN
 	inherent_verbs = list()
 
-	burn_mod = 1.0
-	brute_mod = 1.0
 	radiation_mod = 0.7
 
 /datum/species/human/astartes/handle_post_spawn(var/mob/living/carbon/human/astartes/H)

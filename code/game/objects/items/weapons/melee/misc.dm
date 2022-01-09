@@ -11,7 +11,6 @@
 	origin_tech = list(TECH_COMBAT = 4)
 	attack_verb = list("flicked", "whipped", "lashed")
 
-
 /obj/item/melee/whip/abyssal
 	name = "abyssal whip"
 	desc = "A weapon from the abyss. Requires 70 attack to wield."
@@ -60,7 +59,7 @@
 /obj/item/material/mekmace
 	name = "scrap mace"
 	desc = "A mace normally used by mek boys made of scrap."
-	force = 30
+	force = 28
 	icon = 'icons/obj/weapons/melee/misc.dmi'
 	icon_state = "mekmace"
 	item_state = "mekmace"
@@ -101,7 +100,7 @@
 		user.make_dizzy(120)
 		playsound(usr, 'sound/effects/whispers1.ogg', 100, 0, -1)
 
-// KRIEG AXE 
+// KRIEG MELEE
 
 /obj/item/melee/trench_axe
 	name = "Trench Axe"
@@ -112,7 +111,7 @@
 	wielded_icon = "trenchaxe-w"
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
 	force = 30
-	block_chance = 20
+	block_chance = 30
 	sharp = TRUE
 	edge = TRUE
 	hitsound = "slash_sound"
@@ -120,6 +119,50 @@
 	equipsound = 'sound/items/equip/axe_equip.ogg'
 	grab_sound = 'sound/items/handle/axe_grab.ogg'
 	grab_sound_is_loud = TRUE
+
+// NEW MELEE
+
+/obj/item/melee/trench_axe/runic
+	name = "runic axe"
+	color = "grey"
+	desc = "A strange alien axe used for unknown purposes, it's construction seems ritualistic in nature."
+	force = 33
+	block_chance = 40
+
+/obj/item/toy/katana/seolite
+	name = "seolite blade"
+	color = "grey"
+	desc = "A fine blade far exceeding the craftsmanship of the mechanicus."
+	force = 35
+	throwforce = 20
+
+/obj/item/material/sword/cane/seolite
+	block_chance = 60
+	force = 30
+	name = "ancient rapier"
+	desc = "This runic blade is of excellent quality and make, it fits perfectly in your hand."
+
+/obj/item/material/hatchet/machete/deluxe/seolite
+	name = "seolite cutter"
+	desc = "A cumbersome sword used for hacking and slicing."
+	force = 25
+	block_chance = 40
+	icon_state = "machetedx"
+	item_state = "machete"
+
+/obj/item/melee/classic_baton/daemonhammer
+	name = "daemonhammer"
+	desc = "A power weapon of incredible legend and stature amongst the Ordos Malleus, this Daemonhammer has been used by countless Inquisitor's in their conflict against the unholy creatures of chaos."
+	icon_state = "thunder_hammer"
+	item_state = "thunder_hammer"
+	wielded_icon = "thunder_hammer-w"
+	slot_flags = SLOT_BACK|SLOT_S_STORE
+	w_class = ITEM_SIZE_HUGE
+	str_requirement = 13
+	force = 40
+	block_chance = 38
+	grab_sound_is_loud = TRUE
+	weapon_speed_delay = 12
 
 // CHAINSWORD 
 
@@ -131,8 +174,9 @@
 	item_state = "mercychainsword"
 	wielded_icon = "trenchaxe-w"
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
-	force = 38
-	block_chance = 15
+	str_requirement = 12
+	force = 37
+	block_chance = 10
 	sharp = TRUE
 	edge = TRUE
 	hitsound = 'sound/weapons/chainsword.ogg'
@@ -140,6 +184,7 @@
 	equipsound = 'sound/items/equip/axe_equip.ogg'
 	grab_sound = 'sound/items/handle/axe_grab.ogg'
 	grab_sound_is_loud = TRUE
+	weapon_speed_delay = 14
 
 /obj/item/melee/inqcs
 	name = "Drusian Pattern Chainsword"
@@ -149,7 +194,8 @@
 	item_state = "inqchainsword"
 	wielded_icon = "trenchaxe-w"
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
-	force = 30
+	str_requirement = 10
+	force = 35
 	block_chance = 25
 	sharp = TRUE
 	edge = TRUE
@@ -158,6 +204,7 @@
 	equipsound = 'sound/items/equip/axe_equip.ogg'
 	grab_sound = 'sound/items/handle/axe_grab.ogg'
 	grab_sound_is_loud = TRUE
+	weapon_speed_delay = 13
 
 /obj/item/melee/pcsword
 	name = "Mark I Pattern Chainsword"
@@ -167,7 +214,8 @@
 	item_state = "pcsword"
 	wielded_icon = "trenchaxe-w"
 	slot_flags = SLOT_BELT|SLOT_BACK|SLOT_S_STORE
-	force = 35
+	str_requirement = 14
+	force = 38
 	block_chance = 35
 	sharp = TRUE
 	edge = TRUE
@@ -176,6 +224,7 @@
 	equipsound = 'sound/items/equip/axe_equip.ogg'
 	grab_sound = 'sound/items/handle/axe_grab.ogg'
 	grab_sound_is_loud = TRUE
+	weapon_speed_delay = 11
 
 /obj/item/melee/pcsword/eviscerator
 	name = "Eviscerator Pattern Chainsword"
@@ -184,8 +233,9 @@
 	icon_state = "eviscerator"
 	item_state = "eviscerator"
 	wielded_icon ="eviscerator"
-	force = 15// it's unwieldy when you don't use two hands, baby sword.
-	force_wielded = 45
+	str_requirement = 12
+	force = 25// it's unwieldy when you don't use two hands, baby sword.
+	force_wielded = 42
 	block_chance = 25
 	sharp = 1
 	edge = 1
@@ -197,3 +247,4 @@
 	grab_sound_is_loud = TRUE
 	slot_flags = SLOT_BACK|SLOT_S_STORE
 	attack_verb = list("attacked", "sawed", "cleaved", "torn", "cut")
+	weapon_speed_delay = 16
